@@ -1,0 +1,162 @@
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-Thin.woff") format("woff");
+  font-weight: 300; /* Thin */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-Regular.woff") format("woff");
+  font-weight: 400; /* Regular */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-Medium.woff") format("woff");
+  font-weight: 500; /* Medium */
+  font-style: normal;
+}
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-SemiBold.woff") format("woff");
+  font-weight: 600; /* semi-bold */
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Pretendard";
+  src: url("../fonts/Pretendard-Bold.woff") format("woff");
+  font-weight: 700; /* Bold */
+  font-style: normal;
+}
+body {
+  font-family: "Pretendard", sans-serif;
+}
+
+#banner {
+  background-image: url(../img/banner.jpg);
+  background-attachment: fixed;
+  background-color: black;
+}
+#mobileNav::before {
+  background: none;
+}
+.menu li > :not(ul, .menu-title, details, .btn).active,
+.menu li > :not(ul, .menu-title, details, .btn):active,
+.menu li > details > summary:active {
+  --tw-bg-opacity: 0;
+}
+.menuLink {
+  position: relative;
+}
+.menuLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  background: #fff;
+  width: 0;
+  height: 1px;
+  transition: all 0.5s ease-in-out;
+}
+.menuLink2::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  background: #000;
+  width: 0;
+  height: 1px;
+  transition: all 0.5s ease-in-out;
+}
+
+.collapse-title {
+  padding: 26px 35px;
+}
+.collapse-title {
+  transition: background-color 0.3s, color 0.3s;
+}
+.arrow-container {
+  transition: background-color 0.3s, color 0.3s, transform 0.3s;
+}
+
+.bg-active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff !important;
+  z-index: 999;
+  transition: all ease 0.6s;
+  -webkit-animation: bar 0.6s ease;
+  animation: bar 0.6s ease;
+  box-shadow: 0 0 5px 0 #ddd;
+}
+@keyframes bar {
+  0% {
+    top: -4%;
+  }
+  100% {
+    top: 0%;
+  }
+}
+.bg-active svg path {
+  fill: #000;
+}
+.bg-active .drawer-content .menu li a {
+  color: #000;
+  position: relative;
+}
+.bg-active .drawer-content .menu li .menuLink:hover {
+  background-color: transparent;
+}
+.bg-active .drawer-content .menu li .menuLink::after {
+  content: "";
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  background: #000;
+  width: 0;
+  height: 1px;
+  transition: all 0.5s ease-in-out;
+}
+.bg-active .drawer-content .menu li #navbtnpri {
+  color: #fff;
+  background: #000;
+}
+.bg-active .drawer-content .menu li #navbtnpri:hover {
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+}
+.bg-active .drawer-content #hamburger {
+  color: #000;
+}
+.menuLink:hover::after,
+.menuLink2:hover::after,
+.bg-active .drawer-content .menu li .menuLink:hover::after {
+  width: 100%;
+}
+.shadow-homeBox {
+  --tw-shadow: 0.125rem 0.25rem 1.875rem 0rem rgba(0, 0, 0, 0.1);
+  --tw-shadow-colored: 0.125rem 0.25rem 1.875rem 0rem var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+.btnActive {
+  position: fixed;
+  bottom: 12px;
+  background-color: #000 !important;
+  border: 1px solid #000 !important;
+  color: white !important;
+  width: 90%;
+  z-index: 50;
+}
+/* for mobile device  */
+@media (max-width: 576px) {
+  #banner {
+    background-image: url(../img/bannerphone.png);
+  }
+}

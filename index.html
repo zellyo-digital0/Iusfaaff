@@ -1,0 +1,1343 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bubble</title>
+    <link rel="icon" href="img/logoblackfav.png" />
+
+    <!-- font awesome  -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+      integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!-- daisy ui cdn  -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.11.1/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- tailwind cdn   -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- custom css  -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- header start here  -->
+    <header id="main-header" class="drawer z-[999] top-0 bg-transparent -mb-20">
+      <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+      <div class="drawer-content flex flex-col">
+        <!-- Navbar -->
+        <div
+          class="container max-w-[1388px] xl:px-[10px] mx-auto px-5 lg:px-10 w-full navbar text-white"
+        >
+          <div class="flex-1">
+            <a href="/" id="logoSvg"
+              ><svg
+                width="176"
+                height="41"
+                viewBox="0 0 176 41"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M19.5783 0.955078C8.94568 0.955078 0.324951 9.72989 0.324951 20.5556C0.324951 31.3812 8.94438 40.1561 19.5783 40.1561C30.2123 40.1561 38.8317 31.3812 38.8317 20.5556C38.8317 9.72989 30.2123 0.955078 19.5783 0.955078ZM14.6377 8.51555C13.1219 9.16779 11.7598 10.1024 10.5904 11.2942C9.42099 12.4847 8.50292 13.8714 7.86093 15.4145C7.19809 17.0106 6.86082 18.7089 6.86082 20.4588C6.86082 22.2087 7.19679 23.9056 7.86093 25.5031C8.21643 26.3582 7.82316 27.3445 6.98323 27.7064C6.77357 27.7965 6.55479 27.839 6.34123 27.839C5.69793 27.839 5.08589 27.4532 4.82023 26.8129C3.9842 24.7991 3.55968 22.6621 3.55968 20.4588C3.55968 18.2555 3.9842 16.1184 4.82023 14.1047C5.62761 12.1612 6.78399 10.4153 8.2555 8.91724C9.72701 7.4192 11.442 6.24197 13.3511 5.42004C15.3292 4.56894 17.4284 4.13676 19.5927 4.13676C21.757 4.13676 23.8562 4.56894 25.8342 5.42004C26.6742 5.78195 27.0674 6.76828 26.7119 7.62335C26.3564 8.47843 25.3876 8.87879 24.5476 8.51688C22.9798 7.84209 21.3116 7.49874 19.5927 7.49874C17.8737 7.49874 16.2069 7.84077 14.6377 8.51688V8.51555ZM30.9298 31.999C29.4583 33.4971 27.7433 34.6743 25.8342 35.4962C25.6246 35.5864 25.4058 35.6288 25.1922 35.6288C24.5489 35.6288 23.9369 35.243 23.6712 34.6027C23.3157 33.7476 23.709 32.7613 24.5489 32.3994C26.0647 31.7471 27.4269 30.8125 28.5963 29.6207C29.7657 28.4302 30.6837 27.0435 31.3257 25.5004C31.6812 24.6453 32.6488 24.245 33.49 24.6069C34.3299 24.9688 34.7232 25.9551 34.3677 26.8102C33.5603 28.7537 32.404 30.4996 30.9324 31.9977L30.9298 31.999Z"
+                  fill="#fff"
+                />
+                <path
+                  d="M59.3691 14.1835C57.8578 14.1835 56.3983 14.5048 55.073 15.1234V9.10997C55.073 7.60663 53.9011 6.51709 52.286 6.51709C50.6709 6.51709 49.499 7.60883 49.499 9.10997V31.5325C49.499 33.0975 50.6968 34.2772 52.286 34.2772C53.2395 34.2772 53.8643 33.9097 54.2643 33.5069C55.7389 34.3917 57.4859 34.8539 59.3691 34.8539C61.9269 34.8539 64.3181 33.9471 66.1062 32.3029C67.5354 30.9866 69.2391 28.5698 69.2391 24.533C69.2391 17.736 64.2749 14.1813 59.3691 14.1813V14.1835ZM59.3691 19.8579C60.3766 19.8579 63.6652 20.1947 63.6652 24.5352C63.6652 28.8758 60.3766 29.1839 59.3691 29.1839C58.3615 29.1839 55.073 28.8494 55.073 24.5352C55.073 20.2211 58.3615 19.8579 59.3691 19.8579ZM54.6989 32.9324C54.6989 32.9324 54.6989 32.9302 54.7011 32.928C54.7011 32.928 54.6989 32.9324 54.6967 32.9324H54.6989Z"
+                  fill="#fff"
+                />
+                <path
+                  d="M88.7185 14.7625C87.1294 14.7625 85.9315 15.9026 85.9315 17.417V24.5661C85.9315 27.9712 83.7132 29.184 81.6354 29.184C80.6279 29.184 77.3393 28.8494 77.3393 24.5353V17.4148C77.3393 15.9004 76.1415 14.7603 74.5523 14.7603C72.9632 14.7603 71.7654 15.9004 71.7654 17.4148V24.5353C71.7654 28.5721 73.4691 30.9889 74.8983 32.3051C76.6863 33.9516 79.0776 34.8562 81.6354 34.8562C83.5143 34.8562 85.2591 34.394 86.7315 33.5135C87.231 34.011 87.9099 34.2773 88.7185 34.2773C90.2558 34.2773 91.5055 33.0051 91.5055 31.4401V17.4148C91.5055 15.9004 90.3077 14.7603 88.7185 14.7603V14.7625Z"
+                  fill="#fff"
+                />
+                <path
+                  d="M105.157 14.1835C103.646 14.1835 102.186 14.5048 100.861 15.1234V9.10997C100.861 7.60663 99.6889 6.51709 98.0738 6.51709C96.4587 6.51709 95.2869 7.60883 95.2869 9.10997V31.5325C95.2869 33.0975 96.4847 34.2772 98.0738 34.2772C99.0273 34.2772 99.6522 33.9097 100.052 33.5069C101.527 34.3917 103.274 34.8539 105.157 34.8539C107.715 34.8539 110.106 33.9471 111.894 32.3029C113.323 30.9866 115.027 28.5698 115.027 24.533C115.027 17.736 110.063 14.1813 105.157 14.1813V14.1835ZM105.157 19.8579C106.164 19.8579 109.453 20.1947 109.453 24.5352C109.453 28.8758 106.164 29.1839 105.157 29.1839C104.149 29.1839 100.861 28.8494 100.861 24.5352C100.861 20.2211 104.149 19.8579 105.157 19.8579ZM100.487 32.9324C100.487 32.9324 100.487 32.9302 100.489 32.928C100.489 32.928 100.487 32.9324 100.485 32.9324H100.487Z"
+                  fill="#fff"
+                />
+                <path
+                  d="M127.84 14.1835C126.328 14.1835 124.869 14.5048 123.544 15.1234V9.10997C123.544 7.60663 122.372 6.51709 120.757 6.51709C119.142 6.51709 117.97 7.60883 117.97 9.10997V31.5325C117.97 33.0975 119.168 34.2772 120.757 34.2772C121.71 34.2772 122.335 33.9097 122.735 33.5069C124.21 34.3917 125.957 34.8539 127.84 34.8539C130.398 34.8539 132.789 33.9471 134.577 32.3029C136.006 30.9866 137.71 28.5698 137.71 24.533C137.71 17.736 132.746 14.1813 127.84 14.1813V14.1835ZM127.84 19.8579C128.847 19.8579 132.136 20.1947 132.136 24.5352C132.136 28.8758 128.847 29.1839 127.84 29.1839C126.832 29.1839 123.544 28.8494 123.544 24.5352C123.544 20.2211 126.832 19.8579 127.84 19.8579ZM123.17 32.9324C123.17 32.9324 123.17 32.9302 123.172 32.928C123.172 32.928 123.17 32.9324 123.167 32.9324H123.17Z"
+                  fill="#fff"
+                />
+                <path
+                  d="M150.166 29.1844C149.158 29.1844 145.87 28.8476 145.87 24.5071V9.17209C145.87 7.63353 144.698 6.51758 143.083 6.51758C141.468 6.51758 140.296 7.63353 140.296 9.17209V24.5071C140.296 31.3041 145.26 34.8588 150.166 34.8588C151.645 34.8588 152.804 33.613 152.804 32.0216C152.804 30.4302 151.645 29.1844 150.166 29.1844Z"
+                  fill="#fff"
+                />
+                <path
+                  d="M156.367 15.7118C154.395 17.7346 153.329 20.4508 153.366 23.365C153.405 26.3717 154.646 29.2617 156.864 31.5024C158.806 33.4658 161.567 34.617 164.44 34.6632C167.424 34.7116 170.172 33.6045 172.178 31.5487C173.765 29.9221 174.777 27.8882 175.138 25.6938C175.424 23.9483 173.912 22.4405 172.196 22.7223C171.117 22.9006 170.278 23.7568 170.081 24.8529C169.889 25.9205 169.378 26.9308 168.598 27.7298C167.484 28.8721 166.012 29.4092 164.468 29.3168C163.664 29.2683 163.296 28.2712 163.863 27.6901L171.791 19.5637C172.861 18.4676 172.855 16.6957 171.778 15.6084C167.456 11.237 160.684 11.2832 156.365 15.7118H156.367ZM160.734 24.1662C159.969 24.952 158.62 24.4347 158.6 23.3298C158.574 21.8066 159.171 20.3231 160.118 19.3546C161.184 18.2607 162.611 17.7104 164.021 17.7258C165.128 17.7368 165.681 19.0949 164.901 19.8961L160.734 24.1662Z"
+                  fill="#fff"
+                />
+              </svg>
+            </a>
+          </div>
+          <div class="flex-none lg:hidden">
+            <label
+              id="hamburger"
+              for="my-drawer-3"
+              aria-label="open sidebar"
+              class="btn btn-square btn-ghost"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                class="inline-block w-6 h-6 stroke-current"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </label>
+          </div>
+          <div class="flex-none hidden lg:block">
+            <ul
+              class="menu menu-horizontal items-center text-base font-semibold"
+            >
+              <!-- Navbar menu content here -->
+              <li><a class="menuLink" id="menuLink">알바정보 </a></li>
+              <li><a class="menuLink" id="menuLink">사이트정보</a></li>
+              <li class="ml-4">
+                <a
+                  href="#"
+                  id="navbtnpri"
+                  class="btn btn-outline border border-[#fff] text-black bg-white rounded-3xl py-4 px-10 font-semibold hover:text-black hover:bg-white hover:border-black"
+                  >시작하기</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="drawer-side">
+        <label
+          for="my-drawer-3"
+          aria-label="close sidebar"
+          class="drawer-overlay"
+        ></label>
+        <ul class="menu p-4 w-80 min-h-full bg-base-200 justify-between">
+          <!-- Sidebar content here -->
+          <li>
+            <ul
+              class="p-0 m-0 border-none text-base space-y-5 pt-10 relative"
+              id="mobileNav"
+            >
+              <label
+                for="my-drawer-3"
+                aria-label="close sidebar"
+                class="absolute right-1 top-1 text-2xl"
+                ><i class="fa-solid fa-xmark"></i
+              ></label>
+
+              <li class="items-center">
+                <a class="p-0 m-0 font-semibold">알바정보 </a>
+              </li>
+
+              <li class="items-center">
+                <a class="p-0 m-0 font-semibold">사이트정보</a>
+              </li>
+            </ul>
+          </li>
+          <li>
+            <a
+              href="#"
+              class="btn btn-outline border border-[#fff] text-black bg-white rounded-3xl py-4 px-10 font-semibold hover:bg-white hover:border-black"
+              >시작하기</a
+            >
+          </li>
+        </ul>
+      </div>
+    </header>
+    <!-- header end here  -->
+
+    <!-- main body start here  -->
+    <main>
+      <!-- banner start here  -->
+      <section
+        class="min-h-[80vh] md:min-h-screen bg-cover bg-no-repeat bg-center lg:flex items-center justify-center pt-20"
+        id="banner"
+      >
+        <div
+          class="container max-w-[1388px] mx-auto px-5 lg:px-10 xl:px-0 flex flex-col justify-between min-h-[80vh] md:min-h-full pt-32 lg:pt-0"
+        >
+          <div
+            class="md:min-h-[575px] border border-[#424242] bg-transparent backdrop-blur-lg shadow-sm rounded-[20px] flex items-center justify-center"
+          >
+            <div class="max-w-[500px] text-center text-white py-9 lg:py-0">
+              <h1
+                class="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight w-[250px] mx-auto md:w-[376px] lg:w-full"
+              >
+                익명 유흥알바 커뮤니티, 아무도 모르게 시작하세요.
+              </h1>
+              <p
+                class="text-[10px] md:text-[18px] lg:text-[21px] leading-normal md:leading-[25px] font-semibold pt-[34px] lg:pt-10 md:pb-20 xl:pt-[42px] xl:pb-[85px]"
+              >
+                개인정보 100% 암호화, 버블알바 조차도 알 수 없습니다.
+              </p>
+              <a
+                href="#"
+                class="btn btn-outline h-[50px] w-[163px] text-[18px] lg:text-[21px] font-semibold leading-[50px] border-2 border-[#fff] text-white bg-transparent rounded-3xl text-center hidden md:inline-block hover:text-black hover:bg-white hover:border-black"
+                >시작하기</a
+              >
+            </div>
+          </div>
+          <div class="pb-20 lg:pb-0">
+            <a
+              id="mobileStickyBtn"
+              href="#"
+              class="btn btn-outline border h-[50px] text-[18px] border-[#fff] text-white bg-transparent rounded-3xl leading-[50px] px-12 md:hidden block hover:text-black hover:bg-white hover:border-black"
+              >시작하기</a
+            >
+          </div>
+        </div>
+      </section>
+      <!-- banner end here  -->
+
+      <!-- couple of logos section start here  -->
+      <section
+        class="container max-w-[1388px] mx-auto px-5 lg:px-10 xl:px-0 pt-16 lg:pt-32"
+      >
+        <div class="text-center pb-10 lg:pb-16 xl:pb-[92px]">
+          <h2
+            class="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight w-[264px] mx-auto md:w-[394px] lg:w-full"
+          >
+            노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?
+          </h2>
+          <p class="text-lg lg:text-4xl font-semibold pt-5 lg:pt-[43px]">
+            이미 수 많은 유흥 구인구직 사이트가 있습니다.
+          </p>
+        </div>
+        <div
+          class="grid grid-cols-3 lg:grid-cols-6 gap-y-7 md:gap-y-10 items-center"
+        >
+          <div>
+            <img
+              src="img/logos/1.png"
+              class="mx-auto w-16 md:w-[101px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/2.png"
+              class="mx-auto w-16 md:w-[97px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/3.png"
+              class="mx-auto w-16 md:w-[108px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/4.png"
+              class="mx-auto w-16 md:w-[98px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/5.png"
+              class="mx-auto w-16 md:w-[83px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/6.png"
+              class="mx-auto w-16 md:w-[157px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/7.png"
+              class="mx-auto w-16 md:w-[109px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/8.png"
+              class="mx-auto w-16 md:w-[154px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/9.png"
+              class="mx-auto w-16 md:w-[110px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/10.png"
+              class="mx-auto w-16 md:w-[107px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/11.png"
+              class="mx-auto w-16 md:w-[103px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/12.png"
+              class="mx-auto w-16 md:w-[136px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/13.png"
+              class="mx-auto w-16 md:w-[122px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/14.png"
+              class="mx-auto w-16 md:w-[146px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/15.png"
+              class="mx-auto w-16 md:w-[109px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/16.png"
+              class="mx-auto w-16 md:w-[126px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/17.png"
+              class="mx-auto w-16 md:w-[74px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/18.png"
+              class="mx-auto w-16 md:w-[134px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/19.png"
+              class="mx-auto w-16 md:w-[102px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/20.png"
+              class="mx-auto w-16 md:w-[105px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/21.png"
+              class="mx-auto w-16 md:w-[115px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/22.png"
+              class="mx-auto w-16 md:w-[129px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/23.png"
+              class="mx-auto w-16 md:w-[97px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/24.png"
+              class="mx-auto w-16 md:w-[157px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/25.png"
+              class="mx-auto w-16 md:w-[104px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/26.png"
+              class="mx-auto w-16 md:w-[92px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/27.png"
+              class="mx-auto w-16 md:w-[141px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/28.png"
+              class="mx-auto w-16 md:w-[102px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/29.png"
+              class="mx-auto w-16 md:w-[109px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+          <div>
+            <img
+              src="img/logos/30.png"
+              class="mx-auto w-16 md:w-[137px]"
+              alt="노래방알바? 바알바? 룸알바? 여성알바? 고소득알바?"
+            />
+          </div>
+        </div>
+      </section>
+      <!-- couple of logos section end here  -->
+
+      <!-- card section start here  -->
+      <section
+        class="container max-w-[1206px] mx-auto px-5 lg:px-10 xl:px-0 pt-[49px] lg:pt-[84px] pb-[66px] lg:pb-[133px]"
+      >
+        <div class="text-center pb-[35px] lg:pb-24 xl:pb-[124px]">
+          <h2
+            class="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight w-[264px] mx-auto md:w-[394px] lg:w-full"
+          >
+            버블알바는 솔루션으로 만든 공장형 사이트와 다릅니다.
+          </h2>
+        </div>
+        <div class="space-y-5 md:space-y-10 lg:space-y-12">
+          <div
+            class="bg-white hover:bg-[#eee] rounded-[20px] p-7 md:p-12 card shadow-homeBox flex-col md:flex-row items-center"
+          >
+            <div class="text-black flex-1 space-y-4 md:space-y-7">
+              <h3 class="text-lg md:text-2xl lg:text-4xl font-semibold">
+                개인정보가 털릴까봐 무섭죠?
+              </h3>
+              <p class="text-xs md:text-base lg:text-2xl">
+                안심하세요. 버블알바 조차도 알 수 없어요. <br />
+                버블알바는 개인정보를 복합변수로 암호화하기 때문에 <br />
+                복호화가 불가능합니다.
+              </p>
+            </div>
+            <div class="self-end w-[109px] md:w-44 lg:w-[236px]">
+              <img
+                src="img/card1.png"
+                class="w-full"
+                alt="개인정보가 털릴까봐 무섭죠?"
+              />
+            </div>
+          </div>
+          <div
+            class="bg-white hover:bg-[#eee] rounded-[20px] p-7 md:p-12 card shadow-homeBox flex-col md:flex-row items-center"
+          >
+            <div class="text-black flex-1 space-y-4 md:space-y-7">
+              <h3 class="text-lg md:text-2xl lg:text-4xl font-semibold">
+                남자들이 눈팅할까 걱정이죠?
+              </h3>
+              <p class="text-xs md:text-base lg:text-2xl">
+                안심하세요. 버블알바 조차도 알 수 없어요. <br />
+                버블알바는 개인정보를 복합변수로 암호화하기 때문에 <br />
+                복호화가 불가능합니다.
+              </p>
+            </div>
+            <div class="self-end w-[93px] md:w-44 lg:w-[204px]">
+              <img
+                src="img/card2.png"
+                class="w-full"
+                alt="남자들이 눈팅할까 걱정이죠?"
+              />
+            </div>
+          </div>
+          <div
+            class="bg-white hover:bg-[#eee] rounded-[20px] p-7 md:p-12 card shadow-homeBox flex-col md:flex-row items-center"
+          >
+            <div class="text-black flex-1 space-y-4 md:space-y-7">
+              <h3 class="text-lg md:text-2xl lg:text-4xl font-semibold">
+                분탕치는 사람들 꼴보기 싫죠?
+              </h3>
+              <p class="text-xs md:text-base lg:text-2xl">
+                안심하세요. 버블알바 조차도 알 수 없어요. <br />
+                버블알바는 개인정보를 복합변수로 암호화하기 때문에 <br />
+                복호화가 불가능합니다.
+              </p>
+            </div>
+            <div class="self-end w-[86px] md:w-44 lg:w-[204px]">
+              <img
+                src="img/card3.png"
+                class="w-full"
+                alt="분탕치는 사람들 꼴보기 싫죠?"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- card section end here  -->
+
+      <!-- eye section start here  -->
+      <section
+        class="md:container md:max-w-[1206px] mx-auto md:px-5 lg:px-10 xl:px-0"
+      >
+        <div class="bg-black md:rounded-[20px] py-8 md:py-12 lg:py-16">
+          <div class="flex items-center px-0 max-w-[700px] mx-auto">
+            <div class="w-[100] hidden lg:block">
+              <img
+                src="img/eyes.gif"
+                class="w-full"
+                alt="누군가 훔쳐봐도 걱정 마세요"
+              />
+            </div>
+            <div class="text-center text-white flex-1">
+              <h2
+                class="xl:leading-[63.74px] text-2xl md:text-4xl lg:text-5xl font-bold"
+              >
+                누군가 훔쳐봐도 걱정 마세요.
+              </h2>
+              <p class="text-lg lg:text-4xl font-semibold pt-5 lg:pt-10">
+                절대 밤알바 사이트로는 안보일껄요?
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- eye section end here  -->
+
+      <!-- featute 1 start here  -->
+      <section
+        class="container max-w-[1206px] xl:px-0 mx-auto px-5 lg:px-10 py-16 md:py-20 lg:py-32 xl:pt-[201px] xl:pb-[216px] flex flex-col lg:flex-row items-center justify-between gap-y-14"
+      >
+        <div class="w-full lg:w-[55%] xl:w-[693px]">
+          <h3
+            class="flex items-center text-[#999999] font-semibold text-xs md:text-[21px] gap-x-2 md:gap-x-4 md:leading-7"
+          >
+            <img src="img/Home.svg" class="w-3 md:w-6" alt="Home Icon" /><span
+              >유흥커뮤</span
+            >
+          </h3>
+          <h2
+            class="text-black text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold pt-4 md:pt-5"
+          >
+            익명으로 우리끼리 얘기할 수 있어요.
+          </h2>
+          <div class="text-xs md:text-2xl md:mt-14 leading-normal mt-[22px]">
+            <p class="">
+              일과 관련된 글이 아니더라도 일상, 정보, 고민 등을 나누는
+              공간입니다.
+            </p>
+            <p class="pt-[10px]">
+              마음에 드는 글과 댓글에는 공감하거나 공유, 스크랩을 할 수
+              있습니다.
+            </p>
+            <p class="pt-[10px]">
+              댓글에 사진을 올릴 수 있고 특정 광고주를 태그해서 소환할 수도
+              있습니다.
+            </p>
+            <p class="mt-[48px] mobile:mt-[24px]">
+              인기글에서 지금 가장 핫한 이슈나 실시간 정보들을 확인할 수
+              있습니다.
+            </p>
+            <p class="pt-[10px]">
+              업소홍보에서는 광고뿐만 아니라 양질의 정보나 팁도 볼 수 있습니다.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full lg:w-[40%] xl:w-[452px] flex items-center justify-center xl:justify-start gap-10 md:gap-5 lg:gap-10"
+        >
+          <div class="w-[215px] lg:-w-[48%] xl:w-[215px]">
+            <img
+              src="img/mob1.webp"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="익명으로 우리끼리 얘기할 수 있어요."
+            />
+          </div>
+          <div class="w-[186px] lg:w-[48%] xl:w-[186px]">
+            <img
+              src="img/mob2.webp"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="익명으로 우리끼리 얘기할 수 있어요."
+            />
+          </div>
+        </div>
+      </section>
+      <!-- featute 1 end here  -->
+      <!-- featute 2 start here  -->
+      <section
+        class="container max-w-[1206px] xl:px-0 mx-auto px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-y-14"
+      >
+        <div
+          class="w-full lg:w-[40%] xl:w-[452px] flex items-center justify-center xl:justify-start gap-10 md:gap-5 lg:gap-10 order-2 lg:order-1"
+        >
+          <div class="w-[186px] lg:w-[48%] xl:w-[186px]">
+            <img
+              src="img/mob3.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="검증된 유흥알바 정보를 찾을 수 있어요."
+            />
+          </div>
+          <div class="w-[215px] lg:-w-[48%] xl:w-[215px]">
+            <img
+              src="img/mob4.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="검증된 유흥알바 정보를 찾을 수 있어요."
+            />
+          </div>
+        </div>
+        <div class="w-full lg:w-[55%] xl:w-[696px] order-1 lg:order-2">
+          <h3
+            class="flex items-center text-[#999999] font-semibold text-xs md:text-[21px] gap-x-2 md:gap-x-4 md:leading-7"
+          >
+            <img src="img/page.svg" class="w-3 md:w-6" alt="유흥알바" /><span
+              >유흥알바</span
+            >
+          </h3>
+          <h2
+            class="text-black text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold pt-4 md:pt-5"
+          >
+            검증된 유흥알바 정보를 찾을 수 있어요.
+          </h2>
+          <div class="text-xs md:text-2xl md:mt-14 leading-normal mt-[22px]">
+            <p class="">
+              지역 필터와 직종 필터로 검색결과를 필터링 할 수 있습니다.
+            </p>
+            <p class="pt-[10px]">
+              광고가 많다면 룸알바, 노래방알바, 바알바 등 키워드로 검색할 수
+              있습니다.
+            </p>
+            <p class="pt-[10px]">
+              알바 정보를 보다가 언제든지 연락처를 눌러서 문의할 수 있습니다.
+            </p>
+            <p class="mt-[48px] mobile:mt-[24px]">
+              알바 정보를 스크랩하면 광고별 장단점을 한번에 비교할 수 있습니다.
+            </p>
+            <p class="pt-[10px]">
+              친구와 같이 일을 찾고있다면 공유하기를 통해 함께 정보를 볼 수
+              있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- featute 2 end here  -->
+
+      <!-- featute 3 start here  -->
+      <section
+        class="container max-w-[1206px] xl:px-0 mx-auto px-5 lg:px-10 py-16 md:py-20 lg:py-32 xl:pt-[216px] xl:pb-[216px] flex flex-col lg:flex-row items-center justify-between gap-y-14"
+      >
+        <div class="w-full lg:w-[55%] xl:w-[693px]">
+          <h3
+            class="flex items-center text-[#999999] font-semibold text-xs md:text-[21px] gap-x-2 md:gap-x-4 md:leading-7"
+          >
+            <img src="img/plus.svg" class="w-3 md:w-6" alt="글쓰기" /><span
+              >글쓰기</span
+            >
+          </h3>
+          <h2
+            class="text-black text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold pt-4 md:pt-5"
+          >
+            보안문자 체크 없이 글을 쓸 수 있어요.
+          </h2>
+
+          <div class="text-xs md:text-2xl md:mt-14 leading-normal mt-[22px]">
+            <p class="">
+              하단바 중간에 +플러스 버튼을 누르면 바로 글작성이 가능합니다.
+            </p>
+            <p class="pt-[10px]">
+              깔끔한 하얀 화면에 오직 제목과 글내용만 작성하면 됩니다.
+            </p>
+            <p class="pt-[10px]">
+              모든 글의 작성자는 암호화 처리돼서 누가 작성했는지 알 수 없습니다.
+            </p>
+            <p class="mt-[48px] mobile:mt-[24px]">
+              혹시나 실수로 뒤로가기 버튼을 누르더라도 걱정하지 않아도 됩니다.
+            </p>
+            <p class="pt-[10px]">
+              한번더 팝업이 나와서 실수인지 아닌지 확인할 수 있습니다.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full lg:w-[40%] xl:w-[452px] flex items-center justify-center xl:justify-start gap-10 md:gap-5 lg:gap-10"
+        >
+          <div class="w-[215px] lg:-w-[48%] xl:w-[215px]">
+            <img
+              src="img/mob5.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="보안문자 체크 없이 글을 쓸 수 있어요."
+            />
+          </div>
+          <div class="w-[186px] lg:w-[48%] xl:w-[186px]">
+            <img
+              src="img/mob6.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="보안문자 체크 없이 글을 쓸 수 있어요."
+            />
+          </div>
+        </div>
+      </section>
+      <!-- featute 3 end here  -->
+      <!-- featute 4 start here  -->
+      <section
+        class="container max-w-[1206px] xl:px-0 mx-auto px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-y-14"
+      >
+        <div
+          class="w-full lg:w-[40%] xl:w-[452px] flex items-center justify-center xl:justify-start gap-10 md:gap-5 lg:gap-10 order-2 lg:order-1"
+        >
+          <div class="w-[186px] lg:w-[48%] xl:w-[186px]">
+            <img
+              src="img/mob7.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="댓글이 달리면 알림을 받아 볼 수 있어요."
+            />
+          </div>
+          <div class="w-[215px] lg:-w-[48%] xl:w-[215px]">
+            <img
+              src="img/mob8.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="댓글이 달리면 알림을 받아 볼 수 있어요."
+            />
+          </div>
+        </div>
+        <div class="w-full lg:w-[55%] xl:w-[693px] order-1 lg:order-2">
+          <h3
+            class="flex items-center text-[#999999] font-semibold text-xs md:text-[21px] gap-x-2 md:gap-x-4 md:leading-7"
+          >
+            <img src="img/hour.svg" class="w-3 md:w-6" alt="알림" /><span
+              >알림</span
+            >
+          </h3>
+          <h2
+            class="text-black text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold pt-4 md:pt-5"
+          >
+            댓글이 달리면 알림을 받아 볼 수 있어요.
+          </h2>
+
+          <div class="text-xs md:text-2xl md:mt-14 leading-normal mt-[22px]">
+            <p class="">
+              더이상 댓글이 달렸는지 내 글에 계속 들어가서 확인하지 않아도
+              됩니다.
+            </p>
+            <p class="pt-[10px]">
+              알림을 통해 댓글을 바로바로 확인해서 실시간으로 소통할 수
+              있습니다.
+            </p>
+            <p class="pt-[10px]">
+              모든 글의 작성자는 암호화 처리돼서 누가 작성했는지 알 수 없습니다.
+            </p>
+            <p class="mt-[48px] mobile:mt-[24px]">
+              만약 관심있는 키워드가 있다면 키워드 알림을 설정할 수 있습니다.
+            </p>
+            <p class="pt-[10px]">
+              알림은 마이페이지에서 언제든 켜고 끌 수 있습니다.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- featute 4 end here  -->
+
+      <!-- featute 5 start here  -->
+      <section
+        class="container max-w-[1206px] xl:px-0 mx-auto px-5 lg:px-10 py-16 md:py-20 lg:py-32 xl:pt-[216px] xl:pb-[216px] flex flex-col lg:flex-row items-center justify-between gap-y-14"
+      >
+        <div class="w-full lg:w-[55%] xl:w-[693px]">
+          <h3
+            class="flex items-center text-[#999999] font-semibold text-xs md:text-[21px] gap-x-2 md:gap-x-4 md:leading-7"
+          >
+            <img src="img/user.svg" class="w-3 md:w-6" alt="마이페이지" /><span
+              >마이페이지</span
+            >
+          </h3>
+          <h2
+            class="text-black text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold pt-4 md:pt-5"
+          >
+            프로필색은 자유롭게 고를 수 있어요.
+          </h2>
+          <div class="text-xs md:text-2xl md:mt-14 leading-normal mt-[22px]">
+            <p class="">
+              익명이지만 투명하고 깨끗한 커뮤니티를 위해 프로필색을
+              설정해주세요.
+            </p>
+            <p class="pt-[10px]">
+              개인에 의한 여론몰이와 잘못된 정보 전달을 방지하기 위해서입니다.
+            </p>
+            <p class="pt-[10px]">
+              활동내역에 내 게시글과 댓글, 내가 본 광고와 스크랩한 광고가
+              있습니다.
+            </p>
+            <p class="mt-[48px] mobile:mt-[24px]">
+              게시글과 댓글은 언제든 수정하거나 삭제할 수 있습니다.
+            </p>
+            <p class="pt-[10px]">
+              화류 커뮤니티 특성을 고려해 언제든지 기록을 지울 수 있게
+              만들었습니다.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-full lg:w-[40%] xl:w-[452px] flex items-center justify-center xl:justify-start gap-10 md:gap-5 lg:gap-10"
+        >
+          <div class="w-[215px] lg:-w-[48%] xl:w-[215px]">
+            <img
+              src="img/mob9.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="프로필색은 자유롭게 고를 수 있어요."
+            />
+          </div>
+          <div class="w-[186px] lg:w-[48%] xl:w-[186px]">
+            <img
+              src="img/mob10.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="프로필색은 자유롭게 고를 수 있어요."
+            />
+          </div>
+        </div>
+      </section>
+      <!-- featute 5 end here  -->
+      <!-- featute 6 start here  -->
+      <section
+        class="container max-w-[1206px] xl:px-0 mx-auto px-5 lg:px-10 flex flex-col lg:flex-row items-center justify-between gap-y-14"
+      >
+        <div
+          class="w-full lg:w-[40%] xl:w-[452px] flex items-center justify-center xl:justify-start gap-10 md:gap-5 lg:gap-10 order-2 lg:order-1"
+        >
+          <div class="w-[186px] lg:w-[48%] xl:w-[186px]">
+            <img
+              src="img/mob11.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="사업자만 있다면 누구든 광고할 수 있어요."
+            />
+          </div>
+          <div class="w-[215px] lg:-w-[48%] xl:w-[215px]">
+            <img
+              src="img/mob12.jpg"
+              class="w-full shadow-homeBox border border-black rounded-xl md:rounded-[20px]"
+              alt="사업자만 있다면 누구든 광고할 수 있어요."
+            />
+          </div>
+        </div>
+        <div class="w-full lg:w-[55%] xl:w-[693px] order-1 lg:order-2">
+          <h3
+            class="flex items-center text-[#999999] font-semibold text-xs md:text-[21px] gap-x-2 md:gap-x-4 md:leading-7"
+          >
+            <img src="img/sd.svg" class="w-3 md:w-6" alt="광고센터" /><span
+              >광고센터</span
+            >
+          </h3>
+          <h2
+            class="text-black text-lg md:text-2xl lg:text-3xl xl:text-4xl font-semibold pt-4 pb-4 md:pt-5 md:pb-8"
+          >
+            사업자만 있다면 누구든 광고할 수 있어요.
+          </h2>
+          <div class="text-xs md:text-2xl md:mt-14 leading-normal mt-[22px]">
+            <p class="">사업자 정보를 입력하고 광고프로필을 작성해주세요.</p>
+            <p class="pt-[10px]">
+              정확한 내용으로 광고를 올리신다면 많은 연락을 받으실 수 있습니다.
+            </p>
+            <p class="mt-[48px] mobile:mt-[24px]">
+              결제 후 검수를 통과하면 광고상태가 정상으로 변경됩니다.
+            </p>
+            <p class="pt-[10px]">
+              광고에 관해 궁금한 점이 있으시다면 언제든지 고객센터로
+              문의해주세요.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- featute 6 end here  -->
+
+      <!-- search card section start here  -->
+      <section
+        class="container max-w-[1206px] xl:px-0 mx-auto px-5 lg:px-10 py-16 lg:py-32 xl:pt-[216px] xl:pb-[450px]"
+      >
+        <div class="text-center pb-10 lg:pb-16 xl:pb-[84px]">
+          <h2
+            class="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight w-[264px] mx-auto md:w-[394px] lg:w-full"
+          >
+            알고 계셨나요?
+          </h2>
+          <p class="text-lg lg:text-4xl font-semibold pt-5 lg:pt-[43px]">
+            버블알바가 직접 작성한 정보입니다.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 xl:gap-16">
+          <div
+            class="card shadow-homeBox overflow-hidden flex-col bg-white hover:bg-[#eee] rounded-[20px]"
+          >
+            <div>
+              <img
+                src="img/search.svg"
+                class="w-full"
+                alt="퀸알바, 여우알바 등 여성 유흥 구인구직 사이트 총정리 [2024년]"
+              />
+            </div>
+            <div class="p-5 md:p-8 lg:p-12">
+              <h3 class="text-black font-bold text-base md:text-xl lg:text-3xl">
+                퀸알바, 여우알바 등 여성 유흥 구인구직 사이트 총정리 [2024년]
+              </h3>
+            </div>
+          </div>
+          <div
+            class="card shadow-homeBox overflow-hidden flex-col bg-white hover:bg-[#eee] rounded-[20px]"
+          >
+            <div>
+              <img
+                src="img/search2.svg"
+                class="w-full"
+                alt="유흥알바, 여성알바, 밤알바, 룸알바 등 여자알바 총정리 [2024년]"
+              />
+            </div>
+            <div class="p-5 md:p-8 lg:p-12">
+              <h3 class="text-black font-bold text-base md:text-xl lg:text-3xl">
+                유흥알바, 여성알바, 밤알바, 룸알바 등 여자알바 총정리 [2024년]
+              </h3>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- search card section end here  -->
+
+      <!-- Accordion section start here  -->
+      <section
+        class="container max-w-[1206px] xl:px-0 mx-auto px-5 lg:px-10 py-16 lg:py-[127px] xl:pt-0"
+      >
+        <div class="text-center pb-10 lg:pb-16 xl:pb-[84px]">
+          <h2
+            class="text-2xl md:text-4xl lg:text-5xl font-bold leading-tight w-[264px] mx-auto md:w-[394px] lg:w-full"
+          >
+            자주 묻는 질문
+          </h2>
+        </div>
+        <!-- accordion items start here  -->
+        <div class="space-y-5">
+          <!-- single item  -->
+          <div class="collapse bg-white shadow-homeBox">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              class="peer hidden"
+              id="accordion-1"
+              checked
+            />
+            <label
+              for="accordion-1"
+              class="collapse-title text-lg md:text-2xl font-semibold peer-checked:bg-black py-4 px-5 md:py-6 md:px-9 peer-checked:text-white flex justify-between items-center cursor-pointer"
+            >
+              누군가 욕하면 고소할 수 있나요?
+              <div
+                class="arrow-container bg-black text-white w-6 h-6 md:w-9 md:h-9 rounded-full text-xs flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-chevron-down transition-transform duration-300 transform"
+                ></i>
+              </div>
+            </label>
+            <div class="collapse-content hidden peer-checked:block">
+              <div
+                class="md:text-[21px] md:py-[20px] md:px-[32px] text-[10px] py-[14px] px-[12px]"
+              >
+                <p class="leading-normal">
+                  고소는 대한민국 국민이라면 누구나 할 수 있는 권리에요.
+                </p>
+                <p class="leading-normal">
+                  누군가 회원님을 고소할 경우 수사기관에서 버블알바에 개인정보를
+                  달라고 요청이 올거에요.
+                </p>
+                <p class="leading-normal">
+                  하지만 저희는 개인정보를 수사기관에 드릴 수 없어요.
+                </p>
+                <p class="leading-normal">
+                  버블알바 서버에는 협조할 개인정보 데이터가 없기 때문이에요.
+                </p>
+                <p class="leading-normal">
+                  회원가입할 때 성인확인을 위해 인증한 본인인증 정보는
+                  회원가입과 동시에 암호화되어 복호화할 수 없어요.
+                </p>
+                <p class="leading-normal">
+                  누군가 욕을하거나 신상을 올려도 특정할 수 없기 때문에 자체적인
+                  AI필터를 적용해서 건전한 커뮤니티 환경을 만들기 위해 노력하고
+                  있어요.
+                </p>
+                <p class="leading-normal">회원님들의 많은 협조를 부탁드려요.</p>
+              </div>
+            </div>
+          </div>
+          <!-- single item  -->
+          <div class="collapse bg-white shadow-homeBox">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              class="peer hidden"
+              id="accordion-2"
+            />
+            <label
+              for="accordion-2"
+              class="collapse-title text-lg md:text-2xl font-semibold peer-checked:bg-black py-4 px-5 md:py-6 md:px-9 peer-checked:text-white flex justify-between items-center cursor-pointer"
+            >
+              커뮤니티는 여성만 이용 가능한가요?
+              <div
+                class="arrow-container bg-black text-white w-6 h-6 md:w-9 md:h-9 rounded-full text-xs flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-chevron-down transition-transform duration-300 transform"
+                ></i>
+              </div>
+            </label>
+            <div class="collapse-content hidden peer-checked:block">
+              <div
+                class="md:text-[21px] md:py-[20px] md:px-[32px] text-[10px] py-[14px] px-[12px]"
+              >
+                <p class="leading-normal">
+                  사는얘기 게시판에는 오직 여성회원만 글을 읽고 쓸 수 있어요.
+                </p>
+                <p class="leading-normal">
+                  남성회원은 회원가입하더라도 게시글 열람이 불가능해요.
+                </p>
+                <p class="leading-normal">댓글도 물론이고요.</p>
+                <p class="leading-normal">
+                  광고주인척 염탐하려는 남성회원을 막기 위해 실제로 결제를 해서
+                  광고를 하고 있는 남성 광고주들만 게시글을 보고 댓글을 달 수는
+                  있어요.
+                </p>
+                <p class="leading-normal">
+                  댓글로 소통할 수 있지만 오직 업소홍보 게시판에만 글을 쓸 수
+                  있어요.
+                </p>
+                <p class="leading-normal">
+                  또한 무분별한 댓글 홍보는 자동으로 필터링 되어 쾌적한
+                  커뮤니티를 조성하고 있어요.
+                </p>
+                <p class="leading-normal">
+                  업소홍보가 너무 많다면 상단에 사는얘기 게시판이나 인기글
+                  게시판 탭을 누르면 업소홍보가 더 이상 노출되지 않아요.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- single item  -->
+          <div class="collapse bg-white shadow-homeBox">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              class="peer hidden"
+              id="accordion-3"
+            />
+            <label
+              for="accordion-3"
+              class="collapse-title text-lg md:text-2xl font-semibold peer-checked:bg-black py-4 px-5 md:py-6 md:px-9 peer-checked:text-white flex justify-between items-center cursor-pointer"
+            >
+              댓글이나 키워드 알람은 어떻게 받나요?
+              <div
+                class="arrow-container bg-black text-white w-6 h-6 md:w-9 md:h-9 rounded-full text-xs flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-chevron-down transition-transform duration-300 transform"
+                ></i>
+              </div>
+            </label>
+            <div class="collapse-content hidden peer-checked:block">
+              <div
+                class="md:text-[21px] md:py-[20px] md:px-[32px] text-[10px] py-[14px] px-[12px]"
+              >
+                <p class="leading-normal">
+                  마이페이지에 들어가시면 푸시알림 토글을 눌러서 알람을 끄거나
+                  켤 수 있어요.
+                </p>
+                <p class="leading-normal">
+                  기본 알람은 내가 쓴 글에 댓글이 달릴 경우와 내가 쓴 댓글에
+                  답글이 달리는 경우에 알람이 와요.
+                </p>
+                <p class="leading-normal">
+                  알람 설정을 하지 않아도 하단 알람탭에서 내역을 볼 수 있기
+                  때문에 알람이 직접 오는걸 원하지 않는다면 켜지 않아도
+                  괜찮아요.
+                </p>
+                <p class="leading-normal">원하는 대로 선택할 수 있어요.</p>
+                <p class="leading-normal">
+                  추가로 커뮤니티에서 키워드 검색을 할 경우 해당 키워드에 대한
+                  알람을 받아 볼 수도 있어요.
+                </p>
+                <p class="leading-normal">
+                  관심있는 가게나 이슈, 정보에 대해 키워드 알람을 받아보세요.
+                </p>
+                <p class="leading-normal">
+                  (주의) 휴대폰으로 알람을 받고 싶다면 웹브라우저에서 알람수신
+                  동의를 하셔야해요.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- single item  -->
+          <div class="collapse bg-white shadow-homeBox transition-all">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              class="peer hidden"
+              id="accordion-4"
+            />
+            <label
+              for="accordion-4"
+              class="collapse-title text-lg md:text-2xl font-semibold peer-checked:bg-black py-4 px-5 md:py-6 md:px-9 peer-checked:text-white flex justify-between items-center cursor-pointer"
+            >
+              어떤 알바를 할 수 있나요?
+              <div
+                class="arrow-container bg-black text-white w-6 h-6 md:w-9 md:h-9 rounded-full text-xs flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-chevron-down transition-transform duration-300 transform"
+                ></i>
+              </div>
+            </label>
+            <div class="collapse-content hidden peer-checked:block">
+              <div
+                class="md:text-[21px] md:py-[20px] md:px-[32px] text-[10px] py-[14px] px-[12px]"
+              >
+                <p class="leading-normal">
+                  일반회원은 광고를 등록할 수 없어요.
+                </p>
+                <p class="leading-normal">
+                  여성회원은 회원가입할 때 일반회원과 광고회원 중 한가지를
+                  선택할 수 있고 남성회원은 회원가입할 때 일반회원으로 가입할 수
+                  없이 반드시 광고주회원으로만 가입이 가능해요.
+                </p>
+                <p class="leading-normal">
+                  따라서 광고를 하고 싶은 여성회원이시라면 회원탈퇴 후
+                  광고주회원으로 재가입하셔야해요.
+                </p>
+                <p class="leading-normal">
+                  이는 쾌적한 커뮤니티 환경 조성을 위해서에요.
+                </p>
+                <p class="leading-normal">
+                  광고를 등록하지 않고 광고할 경우 이용약관에 따라 활동이 제한될
+                  수 있어요.
+                </p>
+                <p class="leading-normal">
+                  더 궁금하신 점이 있다면 언제든 고객센터로 연락주세요.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- single item  -->
+          <div class="collapse bg-white shadow-homeBox">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              class="peer hidden"
+              id="accordion-5"
+            />
+            <label
+              for="accordion-5"
+              class="collapse-title text-lg md:text-2xl font-semibold peer-checked:bg-black py-4 px-5 md:py-6 md:px-9 peer-checked:text-white flex justify-between items-center cursor-pointer"
+            >
+              일반회원도 광고를 등록할 수 있나요?
+              <div
+                class="arrow-container bg-black text-white w-6 h-6 md:w-9 md:h-9 rounded-full text-xs flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-chevron-down transition-transform duration-300 transform"
+                ></i>
+              </div>
+            </label>
+            <div class="collapse-content hidden peer-checked:block">
+              <div
+                class="md:text-[21px] md:py-[20px] md:px-[32px] text-[10px] py-[14px] px-[12px]"
+              >
+                <p class="leading-normal">
+                  사업자등록증이 있는 광고회원이라면 누구나 광고 할 수 있어요.
+                </p>
+                <p class="leading-normal">
+                  회원가입하신 후 마이페이지 들어가시면 광고센터가 나와요.
+                </p>
+                <p class="leading-normal">
+                  가장 먼저 광고프로필(광고 내용이나 사진)을 작성해 주신 후
+                  사업자 등록정보를 등록해주시면 광고 준비가 완료돼요.
+                </p>
+                <p class="leading-normal">
+                  이후 광고구매 탭에서 원하는 광고를 선택 후 결제하시면 자동
+                  검수 이후에 광고등록이 끝나요.
+                </p>
+                <p class="leading-normal">
+                  검수 시간은 서버상태에 따라 5~10분 사이가 소요돼요.
+                </p>
+                <p class="leading-normal">
+                  세금계산서를 신청하실 경우 사업자 정보의 사업자로
+                  전자세금계산서가 자동 발행되며, 신청하지 않으실 경우 등록하신
+                  핸드폰 번호로 현금영수증이 발행돼요.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- single item  -->
+          <div class="collapse bg-white shadow-homeBox">
+            <input
+              type="radio"
+              name="my-accordion-2"
+              class="peer hidden"
+              id="accordion-6"
+            />
+            <label
+              for="accordion-6"
+              class="collapse-title text-lg md:text-2xl font-semibold peer-checked:bg-black py-4 px-5 md:py-6 md:px-9 peer-checked:text-white flex justify-between items-center cursor-pointer"
+            >
+              광고는 어떻게 하나요?
+              <div
+                class="arrow-container bg-black text-white w-6 h-6 md:w-9 md:h-9 rounded-full text-xs flex items-center justify-center"
+              >
+                <i
+                  class="fas fa-chevron-down transition-transform duration-300 transform"
+                ></i>
+              </div>
+            </label>
+            <div class="collapse-content hidden peer-checked:block">
+              <p class="p-5">
+                고소를 할 경우 수사기관에서 버블알바에 개인정보를 달라고 요청이
+                옵니다. <br />
+                하지만 저희는 요청한 개인정보를 드릴 수 없습니다.<br />
+                버블알바 서버에는 협조할 개인정보 데이터가 없기 때문입니다.<br />
+                회원가입할 때 성인확인을 위해 인증한 본인인증 정보는 회원가입과
+                동시에 암호화되어 복호화할 수 없습니다.<br />
+                욕을하거나 신상을 올려도 특정할 수 없기 때문에 AI필터를 적용해서
+                건전한 커뮤니티 환경을 만들기위해 노력하고 있습니다.<br />
+                회원님들의 많은 협조를 부탁드립니다.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- accodion items end here  -->
+      </section>
+      <!-- Accordion section end here  -->
+    </main>
+    <!-- main body end here  -->
+
+    <!-- foooter start here  -->
+    <footer class="bg-black">
+      <div class="container max-w-[1388px] mx-auto px-5 lg:px-10 xl:px-0">
+        <div class="flex justify-between py-12">
+          <div>
+            <div class="w-44">
+              <img src="img/logo.svg" class="w-full" alt="Logo" />
+            </div>
+            <div
+              class="font-medium text-white pt-5 w-full space-y-0 md:space-y-2"
+            >
+              <div class="space-y-1 md:space-y-0 md:flex items-center">
+                <p class="md:border-r-2 md:pr-3 md:mr-3 md:border-[#fff]">
+                  서비스명: 버블알바
+                </p>
+                <p>사업자번호: <a href="tel:426-69-00266">426-69-00266</a></p>
+              </div>
+              <div class="space-y-1 md:space-y-0 md:flex items-center">
+                <p class="md:border-r-2 md:pr-3 md:mr-3 md:border-[#fff]">
+                  직업정보제공사업 : J1204020210003
+                </p>
+                <p>통신판매업 : 제2021-서울영등포-2245호</p>
+              </div>
+            </div>
+          </div>
+          <div>
+            <h4 class="text-white text-2xl font-semibold">Socials</h4>
+            <div class="flex gap-4 pt-5">
+              <a href="#"
+                ><img src="img/facebook.png" class="w-9" alt="FaceBook"
+              /></a>
+              <a href="#"
+                ><img src="img/instagram.png" class="w-9" alt="instagram"
+              /></a>
+            </div>
+          </div>
+        </div>
+        <hr class="bg-[#5b5b5b]" />
+        <div
+          class="py-4 pb-24 md:pb-4 text-white text-end font-medium text-xs md:text-base"
+        >
+          <p>Copyright © 2024. 버블알바. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <!-- footer end here  -->
+
+    <!-- accordion js  -->
+    <script>
+      var nav = document.querySelector("header");
+      const mobBtn = document.getElementById("mobileStickyBtn");
+
+      window.addEventListener("scroll", function () {
+        if (window.pageYOffset > 100) {
+          nav.classList.add("bg-active");
+          mobBtn.classList.add("btnActive");
+        } else {
+          nav.classList.remove("bg-active");
+          mobBtn.classList.remove("btnActive");
+        }
+      });
+
+      document
+        .querySelectorAll('input[name="my-accordion-2"]')
+        .forEach((radio) => {
+          radio.addEventListener("change", () => {
+            document
+              .querySelectorAll(".collapse .arrow-container")
+              .forEach((arrow) => {
+                arrow.classList.remove("bg-white", "text-black");
+                arrow.classList.add("bg-black", "text-white");
+                arrow.querySelector("i").classList.remove("-rotate-180");
+              });
+
+            if (radio.checked) {
+              const arrowContainer =
+                radio.nextElementSibling.querySelector(".arrow-container");
+              arrowContainer.classList.add("bg-white", "text-black");
+              arrowContainer.classList.remove("bg-black", "text-white");
+              arrowContainer.querySelector("i").classList.add("-rotate-180");
+            }
+          });
+        });
+
+      // Initialize the state for the checked radio button
+      document
+        .querySelectorAll('input[name="my-accordion-2"]:checked')
+        .forEach((radio) => {
+          const arrowContainer =
+            radio.nextElementSibling.querySelector(".arrow-container");
+          arrowContainer.classList.add("bg-white", "text-black");
+          arrowContainer.classList.remove("bg-black", "text-white");
+          arrowContainer.querySelector("i").classList.add("-rotate-180");
+        });
+    </script>
+  </body>
+</html>
